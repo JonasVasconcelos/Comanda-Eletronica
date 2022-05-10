@@ -19,7 +19,7 @@ const btnLogout = document.getElementById('btnlogout');
 const mainTables = document.getElementsByClassName('container');
 
 function createTable(N) {
-  for(let i = 0; i < N ; i += 1) {
+  for(let i = 1; i <= N ; i += 1) {
   let table = document.createElement('div');
   table.classList.add('table')
   table.innerHTML = i;
@@ -32,7 +32,8 @@ function picker() {
   document.querySelectorAll('.table').forEach((item) => {
     item.addEventListener("click", (event) => {
       /* event.target.classList.add('busy'); */
-      
+      let mesa = event.target.innerHTML
+      localStorage.setItem('mesa', mesa);
       open('./comanda.html', '_self')
     })
   })

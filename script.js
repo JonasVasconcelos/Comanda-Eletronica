@@ -35,6 +35,7 @@ function validation() {
   for (let i = 0; i < dados.length; i += 1) {
     if (loginInput.value === dados[i].nome && passwordInput.value === dados[i].senha){
       flag = true;
+      localStorage.setItem('garcom', dados[i].nome);
       open('./tables.html', target = '_self')
       break;
     }
@@ -44,15 +45,6 @@ function validation() {
     throw e;
   }
 };
-
-function createTable(N) {
-  for(let i = 0; i < N ; i += 1) {
-    let table = document.createElement('div');
-    table.classList.add('table')
-    mainTables[0].appendChild(table);
-  }
-}
-
 
 btnLogin.addEventListener('click', validation);
 window.addEventListener('keydown', function (event) {
@@ -68,6 +60,3 @@ window.addEventListener('keydown', function (event) {
   }
   event.preventDefault();
 }, true);
-
-
-window.onload = createTable(10);

@@ -14,9 +14,6 @@ header {
 
 header img{
     width: 40px;
-    border: 1px solid black;
-    border-radius: 100%;
-    background-color: white;
     margin-left: 5px;
 }
 
@@ -54,20 +51,15 @@ main{
     border: 1px solid black;
     width: 800px;
     height: 800px;
-    display: grid;   
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    align-items: center;
-    grid-gap: 20px;
-    text-align: center;
     line-height: 100px;
-    font-size: 2rem;   
+    font-size: 1.25rem;   
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color:lightgray;
 }
 
 .info{
     display: flex;
     flex-direction: row;
-    width: 500px;
     justify-content: space-between;
-    border: 1px solid black;
 }
