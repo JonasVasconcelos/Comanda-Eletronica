@@ -55,10 +55,12 @@ main{
     font-size: 1.25rem;   
     margin-top: 15px;
     border-radius: 20px;
-    background-color:lightgray;
+    /* background-color:lightgray; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    color: black;
+
 }
 
 .info {
@@ -79,6 +81,7 @@ main{
     border: 1px solid rgb(126, 124, 124);
     padding: 5px;  
     margin-bottom: 10px; 
+    z-index: 2;
 }
 
 .item1{
@@ -93,11 +96,15 @@ main{
 }
 
 .itens label{
-    /* border: 1px solid black; */
     height: 30px;
     font-size: 1rem;
 }
 
 .item3 {
     grid-column: 2;
+    grid-row: 2;
+}
+
+.pizza{
+    background-image: url('./pizzas2.jpg');
 }
