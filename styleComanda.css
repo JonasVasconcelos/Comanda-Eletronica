@@ -13,9 +13,14 @@ header {
 }
 
 header img{
+    border-radius: 100%;
     width: 40px;
     margin-left: 5px;
 }
+/* header img:hover{
+    box-shadow:  2px 2px 5px #838383,
+                    -2px -2px 5px #777676;
+} */
 
 header h1{
     color: white;
@@ -47,11 +52,11 @@ header a{
                 -2px -2px 5px #777676;
 }
 
-main{
+form{
     border: 1px solid black;
     width: 800px;
     height: 800px;
-    line-height: 100px;
+    /* line-height: 70px; */
     font-size: 1.25rem;   
     margin-top: 15px;
     border-radius: 20px;
@@ -60,7 +65,7 @@ main{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 1fr);
     color: black;
-
+    gap: 10px;
 }
 
 .info {
@@ -68,7 +73,7 @@ main{
     flex-direction: row;
     justify-content: space-between;
     grid-column: 1 / span 2;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .itens {
@@ -78,15 +83,24 @@ main{
     flex-direction: column;
     line-height: 1rem;
     width: 100%;
-    border: 1px solid rgb(126, 124, 124);
+    /* border: 1px solid rgb(126, 124, 124); */
     padding: 5px;  
     margin-bottom: 10px; 
-    z-index: 2;
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
 }
 
-.item1{
-    grid-row: 2;
+.cervejas{
+    background-image: url('./cervejas.jpg');
+    background-size: cover;
 }
+
+.refri{
+    background-image: url('./coca-cola.jpg');
+    background-size: cover;
+}
+
 
 .itens input{
     line-height: 0.5rem;
@@ -107,4 +121,39 @@ main{
 
 .pizza{
     background-image: url('./pizzas2.jpg');
+    background-size: cover;
 }
+
+.hamburguer{
+    grid-row: 2/ span 2;
+    grid-column: 2;
+    background-image: url('./hamburguer2.jpg');
+    background-size: cover;
+}
+
+#obs{
+    font-size: 1rem;
+    padding: 10px;
+    line-height: 1.25rem;
+    border-radius: 15px;
+}
+
+form button{
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+}
+
+#pedidosReset{
+    background-color: red;
+}
+
+#pedidosProx{
+    background-color: green;
+}
+
+#pedidosReset:hover, #pedidosProx:hover{
+    box-shadow:  2px 2px 5px #838383,
+                -2px -2px 5px #777676;
+}
+

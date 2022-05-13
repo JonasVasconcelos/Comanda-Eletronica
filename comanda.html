@@ -18,13 +18,13 @@
         <a href="./index.html" target="_self" id="btnlogout">Logout</a>
     </header>
 
-    <main class="container">
+    <form class="container">
         <div class="info">
             <label id="mesa">Mesa: </label>
             <label id="garcom">Garçom: </label>
             <label id="data">Data: </label>
         </div>
-        <div class="itens item1">
+        <div class="itens cervejas">
             <label for="brahma600">Brahma (600ml):</label>
             <input type="number" id="brahma600" min="0">
             
@@ -41,7 +41,7 @@
             <input type="number" id="heineken600" min="0">
         </div>
 
-        <div class="itens item2">
+        <div class="itens refri">
             <label for="guarana">Guaraná (lata):</label>
             <input type="number" id="guarana" min="0">
             
@@ -59,54 +59,73 @@
         </div>
 
         <div class="itens pizza">
-            <label for="guarana">Guaraná (lata):</label>
-            <input type="number" id="guarana" min="0">
+            <label for="queijo">4 Queijos:</label>
+            <input type="number" id="queijo" min="0">
             
-            <label for="Coca-cola">Coca-cola (lata):</label>
-            <input type="number" id="Coca-cola" min="0">
+            <label for="FrangoCat">Frango com Catupiry:</label>
+            <input type="number" id="frangoCat" min="0">
             
-            <label for="agua500">Água (500ml):</label> 
-            <input type="number" id="agua500" min="0">
+            <label for="calabresa">Calabresa:</label> 
+            <input type="number" id="calabresa" min="0">
 
-            <label for="laranjaCopo">Suco de Laranja (300ml):</label> 
-            <input type="number" id="laranjaCopo" min="0">
+            <label for="atum">Atum:</label> 
+            <input type="number" id="atum" min="0">
 
-            <label for="laranjaJarra">Suco de Laranja (Jarra):</label> 
-            <input type="number" id="laranjaJarra" min="0">
+            <label for="marguerita">Marguerita:</label> 
+            <input type="number" id="marguerita" min="0">
         
-            <label for="guarana">Guaraná (lata):</label>
-            <input type="number" id="guarana" min="0">
+            <label for="nordestina">Nordestina:</label>
+            <input type="number" id="nordestina" min="0">
             
-            <label for="Coca-cola">Coca-cola (lata):</label>
-            <input type="number" id="Coca-cola" min="0">
+            <label for="modaDaCasa">À moda da casa:</label>
+            <input type="number" id="modaDaCasa" min="0">
             
-            <label for="agua500">Água (500ml):</label> 
-            <input type="number" id="agua500" min="0">
+            <label for="milho">Milho:</label> 
+            <input type="number" id="milho" min="0">
 
-            <label for="laranjaCopo">Suco de Laranja (300ml):</label> 
-            <input type="number" id="laranjaCopo" min="0">
+            <label for="brocolis">Brócolis:</label> 
+            <input type="number" id="brocolis" min="0">
 
-            <label for="laranjaJarra">Suco de Laranja (Jarra):</label> 
-            <input type="number" id="laranjaJarra" min="0">
+            <label for="lombo">Lombo Canadense:</label> 
+            <input type="number" id="lombo" min="0">
+        </div>
+        <div class="itens hamburguer">
+            <label for="queijo">4 Queijos:</label>
+            <input type="number" id="queijo" min="0">
+            
+            <label for="FrangoCat">Frango com Catupiry:</label>
+            <input type="number" id="frangoCat" min="0">
+            
+            <label for="calabresa">Calabresa:</label> 
+            <input type="number" id="calabresa" min="0">
+
+            <label for="atum">Atum:</label> 
+            <input type="number" id="atum" min="0">
+
+            <label for="marguerita">Marguerita:</label> 
+            <input type="number" id="marguerita" min="0">
+        
+            <label for="nordestina">Nordestina:</label>
+            <input type="number" id="nordestina" min="0">
+            
+            <label for="modaDaCasa">À moda da casa:</label>
+            <input type="number" id="modaDaCasa" min="0">
+            
+            <label for="milho">Milho:</label> 
+            <input type="number" id="milho" min="0">
+
+            <label for="brocolis">Brócolis:</label> 
+            <input type="number" id="brocolis" min="0">
+
+            <label for="lombo">Lombo Canadense:</label> 
+            <input type="number" id="lombo" min="0">
         </div>
 
-        <div class="itens item3">
-            <label for="guarana">Guaraná (lata):</label>
-            <input type="number" id="guarana" min="0">
-            
-            <label for="Coca-cola">Coca-cola (lata):</label>
-            <input type="number" id="Coca-cola" min="0">
-            
-            <label for="agua500">Água (500ml):</label> 
-            <input type="number" id="agua500" min="0">
+        <textarea id="obs" cols="30" rows="10" placeholder="Observações..."></textarea>
 
-            <label for="laranjaCopo">Suco de Laranja (300ml):</label> 
-            <input type="number" id="laranjaCopo" min="0">
-
-            <label for="laranjaJarra">Suco de Laranja (Jarra):</label> 
-            <input type="number" id="laranjaJarra" min="0">
-        </div>
-    </main>
+        <button type="reset" id="pedidosReset">Limpar</button>
+        <button type="submit" id="pedidosProx">Próximo</button>
+    </form>
     <script src="scriptComanda.js"></script>
 </body>
 </html>
