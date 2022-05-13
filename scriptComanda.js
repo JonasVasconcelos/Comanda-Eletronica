@@ -14,12 +14,29 @@ mesaComanda.innerHTML += mesaCurrent;
 garcomComanda.innerHTML += garcomCurrent;
 
 let form = document.querySelector('form');
-let brahma600 = document.getElementById('brahma600');
+/* let brahma600 = document.getElementById('brahma600');
 let brahma1000 = document.getElementById('brahma1000');
 let devassa600 = document.getElementById('devassa600');
 let heinekenlong = document.getElementById('heinekenlong');
 let heineken600 = document.getElementById('heineken600');
+
 let guarana = document.getElementById('guarana');
+let Cocacola = document.getElementById('Coca-cola');
+let agua500 = document.getElementById('agua500');
+let laranjaCopo = document.getElementById('laranjaCopo');
+let laranjaJarra = document.getElementById('laranjaJarra');
+
+let queijo = document.getElementById('queijo');
+let FrangoCat = document.getElementById('FrangoCat');
+let queijo = document.getElementById('queijo');
+let FrangoCat = document.getElementById('FrangoCat');
+let queijo = document.getElementById('queijo');
+let FrangoCat = document.getElementById('FrangoCat');
+let queijo = document.getElementById('queijo');
+let FrangoCat = document.getElementById('FrangoCat');
+let queijo = document.getElementById('queijo');
+let FrangoCat = document.getElementById('FrangoCat');
+ */
 
 let menu = {
     brahma600: 5,
@@ -56,7 +73,7 @@ function addPedido() {
   let N = Inputs.length;
   for(i = 0; i < N; i++) {
     if(Number(Inputs[i].value) > 0) {
-      Order.order(Labels[i].innerHTML, Number(Inputs[i].value));
+      Order.order(Labels[i].innerHTML.replace(':',''), Number(Inputs[i].value));
     }
   }
 }
@@ -69,7 +86,7 @@ function fillFormWithUserInfo() {
     form.innerHTML = `<h2>Resumo do pedido</h2>`
     form.innerHTML += `<h3>Mesa: ${Order.table}</h3>`
     for(i = 0; i < Order.consumption.length; i++){
-        form.innerHTML += `<p class='pResumo'> ${Order.qnt[i]} ${Order.consumption[i].replace(':','')}</p>`
+        form.innerHTML += `<p class='pResumo'> ${Order.qnt[i]} ${Order.consumption[i]}</p>`
     }
     
     let diV = document.createElement('div');
@@ -85,10 +102,19 @@ function fillFormWithUserInfo() {
 
     btn = document.createElement('button');
     btn.classList.add('pedidosProx');
+    btn.setAttribute('id', 'Confirmar')
     btn.style.width = '50%';
     btn.style.color = 'white';
     btn.innerHTML = 'Confirmar?'
     diV.appendChild(btn);
+
+    btn.addEventListener('click', enviar)
+}
+
+function enviar(Order){
+    /* Como enviar para outra pessoa? */
+    window.localStorage.setItem('mesa2',JSON.stringify(Order))
+    alert('Pedido enviado com sucesso!')
 }
 
 btnProx[0].addEventListener('click', () =>{
