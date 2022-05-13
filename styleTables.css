@@ -67,7 +67,7 @@ main{
 .table{
     width: 100px;
     height: 100px;
-    background-image: url('./tablelivre.png');
+    background-image: url('./Images/tablelivre.png');
     background-size: contain;
     transform: scale(.9);
     transform-origin: 0 0;
@@ -75,7 +75,7 @@ main{
 }
 
 .busy{
-    background-image: url('./tablebusy.png');
+    background-image: url('./Images/tablebusy.png');
     transform: scale(1.25);
 
 }
