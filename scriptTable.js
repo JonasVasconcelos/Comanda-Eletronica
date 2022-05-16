@@ -39,5 +39,17 @@ function picker() {
   })
 }
 
+createTable(10);
 
-window.onload = createTable(10);
+const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
+const setDados = (name, obj) => localStorage.setItem(name, JSON.stringify(obj))
+
+const tableColor = () => {
+  let tableBusy = getDados('tableBusy');
+  let tables = document.getElementsByClassName('table')
+  for(let i = 0; i < tableBusy.length; i += 1) {
+    tables[Number(tableBusy[i])-1].classList.add('busy');
+  }
+}
+
+tableColor()

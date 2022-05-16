@@ -9,34 +9,12 @@ const dataComanda = document.getElementById('data');
 const mesaComanda = document.getElementById('mesa');
 const garcomComanda = document.getElementById('garcom');
 
+let form = document.querySelector('form');
+
 dataComanda.innerHTML = date;
 mesaComanda.innerHTML += mesaCurrent;
 garcomComanda.innerHTML += garcomCurrent;
 
-let form = document.querySelector('form');
-/* let brahma600 = document.getElementById('brahma600');
-let brahma1000 = document.getElementById('brahma1000');
-let devassa600 = document.getElementById('devassa600');
-let heinekenlong = document.getElementById('heinekenlong');
-let heineken600 = document.getElementById('heineken600');
-
-let guarana = document.getElementById('guarana');
-let Cocacola = document.getElementById('Coca-cola');
-let agua500 = document.getElementById('agua500');
-let laranjaCopo = document.getElementById('laranjaCopo');
-let laranjaJarra = document.getElementById('laranjaJarra');
-
-let queijo = document.getElementById('queijo');
-let FrangoCat = document.getElementById('FrangoCat');
-let queijo = document.getElementById('queijo');
-let FrangoCat = document.getElementById('FrangoCat');
-let queijo = document.getElementById('queijo');
-let FrangoCat = document.getElementById('FrangoCat');
-let queijo = document.getElementById('queijo');
-let FrangoCat = document.getElementById('FrangoCat');
-let queijo = document.getElementById('queijo');
-let FrangoCat = document.getElementById('FrangoCat');
- */
 
 let menu = {
     brahma600: 5,
@@ -78,7 +56,6 @@ function addPedido() {
   }
 }
 
-
 function fillFormWithUserInfo() {
     addPedido();
     form.style.display = 'block';
@@ -107,17 +84,52 @@ function fillFormWithUserInfo() {
     btn.style.color = 'white';
     btn.innerHTML = 'Confirmar?'
     diV.appendChild(btn);
-
     btn.addEventListener('click', enviar)
 }
 
-function enviar(Order){
-    /* Como enviar para outra pessoa? */
-    window.localStorage.setItem('mesa2',JSON.stringify(Order))
-    alert('Pedido enviado com sucesso!')
+const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
+const setDados = (name, obj) => localStorage.setItem(name, JSON.stringify(obj))
+
+const stringficar = (string, number) => {
+  let res = [];
+  for (let i = 0; i < string.length; i += 1) {
+    for (let j = 0; j < number[i]; j += 1) {
+      res.push(string[i].repeat(1));
+    }
+  }
+  return res
+}
+
+
+const enviar = () => {
+  /* Como enviar para outra pessoa? */
+  let orderString = stringficar(Order.consumption, Order.qnt);
+  let mesaName = 'mesa' + mesaCurrent;
+
+  let dataTable = getDados(mesaName);
+  if (dataTable.length === 0) {
+    setDados(mesaName, orderString); 
+  } else {
+    Array.prototype.push.apply(dataTable, orderString);
+    setDados(mesaName, dataTable); 
+  }
+
+  let tableBusy = getDados('tableBusy');
+  if (tableBusy.length === 0) {
+    tableBusy.push(mesaCurrent)
+    console.log(tableBusy)
+    setDados('tableBusy', tableBusy); 
+  } else {
+    tableBusy.push(mesaCurrent);
+    tableBusy = [...new Set(tableBusy)];
+    setDados('tableBusy', tableBusy); 
+  }
+
+  alert('Pedido enviado com sucesso!');
 }
 
 btnProx[0].addEventListener('click', () =>{
     /* open('./Resumo.html', target = '_self') */
     fillFormWithUserInfo();
+    open('./tables.html', '_self')
 })

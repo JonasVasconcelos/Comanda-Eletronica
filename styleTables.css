@@ -76,6 +76,6 @@ main{
 
 .busy{
     background-image: url('./Images/tablebusy.png');
-    transform: scale(1.25);
+    /* transform: scale(1.25); */
 
 }
