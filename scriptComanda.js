@@ -85,6 +85,8 @@ function fillFormWithUserInfo() {
     btn.innerHTML = 'Confirmar?'
     diV.appendChild(btn);
     btn.addEventListener('click', enviar)
+    open('./tables.html', '_self')
+
 }
 
 const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
@@ -99,7 +101,6 @@ const stringficar = (string, number) => {
   }
   return res
 }
-
 
 const enviar = () => {
   /* Como enviar para outra pessoa? */
@@ -131,5 +132,4 @@ const enviar = () => {
 btnProx[0].addEventListener('click', () =>{
     /* open('./Resumo.html', target = '_self') */
     fillFormWithUserInfo();
-    open('./tables.html', '_self')
 })
