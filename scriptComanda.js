@@ -85,8 +85,6 @@ function fillFormWithUserInfo() {
     btn.innerHTML = 'Confirmar?'
     diV.appendChild(btn);
     btn.addEventListener('click', enviar)
-    open('./tables.html', '_self')
-
 }
 
 const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
@@ -125,7 +123,7 @@ const enviar = () => {
     tableBusy = [...new Set(tableBusy)];
     setDados('tableBusy', tableBusy); 
   }
-
+  open('./tables.html', '_self')
   alert('Pedido enviado com sucesso!');
 }
 
