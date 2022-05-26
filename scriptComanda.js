@@ -126,14 +126,12 @@ const enviar = () => {
     setDados('tableBusy', tableBusy); 
   }
   alert('Pedido enviado com sucesso!');
-
+  open('./tables.html', '_self')
 }
 
 btnProx[0].addEventListener('click', () =>{
     /* open('./Resumo.html', target = '_self') */
     fillFormWithClientOrder();
-    open('./tables.html', '_self')
-
 })
 
 const totalUpdate = (mesaCurrent) => {
