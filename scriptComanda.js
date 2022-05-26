@@ -9,6 +9,11 @@ const dataComanda = document.getElementById('data');
 const mesaComanda = document.getElementById('mesa');
 const garcomComanda = document.getElementById('garcom');
 
+const totalDaConta = document.getElementById('totalDaConta');
+
+const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
+const setDados = (name, obj) => localStorage.setItem(name, JSON.stringify(obj))
+
 let form = document.querySelector('form');
 
 dataComanda.innerHTML = date;
@@ -16,13 +21,13 @@ mesaComanda.innerHTML += mesaCurrent;
 garcomComanda.innerHTML += garcomCurrent;
 
 
-let menu = {
-    brahma600: 5,
-    brahma1000: 5,
-    devassa600: 5,
-    heinekenlong: 5,
-    heineken600: 5,
-    guarana: 5
+const menu = {
+    'Brahma (600ml)': 7,
+    'Brahma (1000ml)': 10,
+    'Devassa (600ml)': 12,
+    'Heineken (Long neck)': 9,
+    'Heineken (600ml)': 15,
+    'Guaraná (lata)': 4
 }
 
 function createMenu(menu) {
@@ -56,7 +61,7 @@ function addPedido() {
   }
 }
 
-function fillFormWithUserInfo() {
+function fillFormWithClientOrder() {
     addPedido();
     form.style.display = 'block';
     form.style.paddingTop = '10px';
@@ -86,9 +91,6 @@ function fillFormWithUserInfo() {
     diV.appendChild(btn);
     btn.addEventListener('click', enviar)
 }
-
-const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []
-const setDados = (name, obj) => localStorage.setItem(name, JSON.stringify(obj))
 
 const stringficar = (string, number) => {
   let res = [];
@@ -123,11 +125,24 @@ const enviar = () => {
     tableBusy = [...new Set(tableBusy)];
     setDados('tableBusy', tableBusy); 
   }
-  open('./tables.html', '_self')
   alert('Pedido enviado com sucesso!');
+
 }
 
 btnProx[0].addEventListener('click', () =>{
     /* open('./Resumo.html', target = '_self') */
-    fillFormWithUserInfo();
+    fillFormWithClientOrder();
+    open('./tables.html', '_self')
+
 })
+
+const totalUpdate = (mesaCurrent) => {
+  const orders = getDados('mesa' + mesaCurrent);
+  let total = 0;
+  for(i in orders) {
+    total += menu[orders[i]]
+  }
+  return total.toFixed(2); 
+}
+
+totalDaConta.innerHTML = `Total: R$ ${totalUpdate(mesaCurrent)}`

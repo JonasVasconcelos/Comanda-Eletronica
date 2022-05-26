@@ -54,13 +54,11 @@ header a{
 
 form{
     border: 1px solid black;
-    width: 800px;
-    height: 800px;
-    /* line-height: 70px; */
-    font-size: 1.25rem;   
+    width: 100%;
+    height: 850px;
+    font-size: 1.25rem;
     margin-top: 15px;
     border-radius: 20px;
-    /* background-color:lightgray; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -73,19 +71,15 @@ form{
     flex-direction: row;
     justify-content: space-between;
     grid-column: 1 / span 2;
-    /* border: 1px solid black; */
 }
 
 .itens {
     display: grid;
-    grid-column: 1;
     grid-template-columns: 3fr 1fr;
     flex-direction: column;
     line-height: 1rem;
     width: 100%;
-    /* border: 1px solid rgb(126, 124, 124); */
     padding: 5px;  
-    margin-bottom: 10px; 
     border-radius: 15px;
     font-weight: bold;
     color: black;
@@ -101,7 +95,6 @@ form{
     background-size: cover;
 }
 
-
 .itens input{
     line-height: 0.5rem;
     width: 100%;
@@ -114,11 +107,11 @@ form{
     font-size: 1rem;
 }
 
-.item3 {
+/* .item3 {
     grid-column: 2;
     grid-row: 2;
 }
-
+ */
 .pizza{
     background-image: url('./Images/pizzas2.jpg');
     background-size: cover;
@@ -136,6 +129,20 @@ form{
     padding: 10px;
     line-height: 1.25rem;
     border-radius: 15px;
+    grid-column: 2;
+    grid-row: 4 / span 1 ;
+}
+
+#totalDaConta {
+    grid-column: 2;
+    grid-row: 6;
+    height: 50px;
+    /* border: 1px solid black; */
+    padding: 7px;
+    text-align: center;
+    background-color: #d6cfcf;
+    font-weight: bold;
+    border-radius: 20px;
 }
 
 form button{
@@ -152,7 +159,15 @@ form button{
     background-color: green;
 }
 
-#pedidosReset:hover, #pedidosProx:hover{
+.fecharComanda{
+    background-color: gray;
+    color: black;
+    font-weight: bold;
+}
+
+.pedidosReset:hover, 
+.pedidosProx:hover,
+.fecharComanda:hover{
     box-shadow:  2px 2px 5px #838383,
                 -2px -2px 5px #777676;
 }
