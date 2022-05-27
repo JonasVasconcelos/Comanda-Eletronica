@@ -222,6 +222,6 @@ form button{
 }
 
 .confirmar{
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 20;
 }
