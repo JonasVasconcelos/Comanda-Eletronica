@@ -180,3 +180,48 @@ form button{
 .divResumo{
     display: flex;
 }
+
+.formContaFinal{
+    display: grid;
+    grid-template-columns: 1fr 5fr 3fr;
+    grid-template-rows: repeat(20, 1fr);
+    padding: 10px;
+}
+
+.pContaFinal{
+    font-size: 1.5rem;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 2rem;
+}
+
+.qntContaFinal{
+    text-align: center;
+}
+
+.precoContafinal{
+    text-align: right;
+}
+
+.itemContaFinal{
+    text-align: left;
+}
+
+.infoContaFinal{
+    grid-column: 1 / span 3;
+    text-align: center;
+}
+
+.totalContaFinal{
+    border-top: 2px solid black;
+    font-weight: bold;
+}
+.rotuloContaFinal{
+    border-bottom: 2px solid black;
+}
+
+.confirmar{
+    grid-column: 2;
+    grid-row: 20;
+}
