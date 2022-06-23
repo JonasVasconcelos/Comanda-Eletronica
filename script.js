@@ -8,13 +8,7 @@ let dados = [
                 nome: 'JonasVas',
                 senha: '123456',
                 cargo: 'adm'
-            },
-            {
-              nome: 'Tuanny',
-              senha: '1234',
-              cargo: 'funcionario'
             }
-
 ]
 
 const getDados = (name) => JSON.parse(localStorage.getItem(name)) ?? []

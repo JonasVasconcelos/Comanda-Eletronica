@@ -29,7 +29,35 @@ const menu = {
     'Devassa (600ml)': 12,
     'Heineken (Long neck)': 9,
     'Heineken (600ml)': 15,
-    'Guaraná (lata)': 4
+
+    'Guaraná (lata)': 4,
+    'Coca-cola (lata)': 4,
+    'Água (500ml)': 3,
+    'Suco de Laranja (300ml)': 5,
+    'Suco de Laranja (Jarra)': 15,
+
+    '4 Queijos': 25,
+    'Frango com Catupiry': 30,
+    'Calabresa': 25,
+    'Atum': 30,
+    'Marguerita': 25,
+    'Nordestina': 35,
+    'À moda da casa': 35,
+    'Milho': 25,
+    'Brócolis': 25,
+    'Lombo': 35,
+
+    'X-Burguer': 10,
+    'X-Egg': 10,
+    'X-Frango': 10,
+    'X-Calabresa': 10,
+    'X-Atum': 10,
+    'X-Salada': 10,
+    'X-Nordestino': 10,
+    'X-Tudo': 15,
+    'X-Tudo Dobrado': 20,
+    'X-Especial': 20,
+
 }
 
 function createMenu(menu) {
